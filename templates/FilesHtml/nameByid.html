@@ -1,0 +1,49 @@
+
+{% extends 'FilesHtml/base.html' %}
+{% block title %}
+
+{% load embed_video_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+              <h2 class="card-text"><a style="text-decoration: none;" href="{% url 'home'  %}">back</a></h2>
+
+   {% block name %}
+ <title>{{data.name}}</title>
+    {% endblock name %}
+</head>
+<body>
+
+<div align="center">
+<br>
+
+<!--nameBtid in modles Names -->
+    <div class="card">
+  <div class="card-header">
+    صفة الله
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+    <h2>{{data.name}} </h2>
+    </blockquote>
+  </div>
+</div>
+    <br>
+
+    <h3>{{data.description}} </h3>
+<br>
+<br>
+<br>
+
+{% video data.Video '624x400' %}
+
+
+
+
+    </div>
+{% endblock  %}
+
+</body>
+</html>
