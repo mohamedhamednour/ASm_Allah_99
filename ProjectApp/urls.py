@@ -22,6 +22,8 @@ from django.urls import path,include
 urlpatterns = [
     path('BaseSite', views.BaseSite, name='base'),
     path('nameByid/<int:Id_name>',views.NamesByid,name='nameByid'),
+    path('Azkar', views.Azkar, name='Azkar'),
+
     path('signup', views.signup, name='sign'),
     path('logout', views.logOut, name='logout'),
 

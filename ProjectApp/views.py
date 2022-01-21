@@ -13,6 +13,9 @@ def NamesByid(request,Id_name):
     data = Names.objects.get(id=Id_name)
     return render(request, 'FilesHtml/nameByid.html',{"data":data})
 
+def Azkar(request):
+    return render(request, 'FilesHtml/Azkar.html')
+
 
 def signup(request):
     if request.method == 'POST':
