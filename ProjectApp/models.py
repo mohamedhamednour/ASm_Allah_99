@@ -32,7 +32,8 @@ class Images(models.Model):
         image = cls.objects.get(id=image_id)
         return image
 
-
+    def total_likes(self):
+        self.likes.count()
 
     
     def __str__(self):
