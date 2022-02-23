@@ -4,6 +4,8 @@ from .forms import SignUpForm, Userauth
 from django.contrib.auth import login as loginauth, logout as logoutsite,authenticate
 from rest_framework.generics import GenericAPIView
 from rest_framework import generics
+from rest_framework import viewsets
+
 
 from .models import Images
 from .api import Imagess
@@ -61,6 +63,6 @@ def logOut(request):
 
 
 
-class image(generics.ListCreateAPIView):
+class image(viewsets.ModelViewSet):
     queryset = Images.objects.all()
     serializer_class = Imagess

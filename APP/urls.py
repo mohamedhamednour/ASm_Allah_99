@@ -18,11 +18,16 @@ from django.urls import path, include
 from ProjectApp import views
 from django.conf import settings
 from django.conf.urls.static import static
+
+from rest_framework.routers import DefaultRouter
+
+routers = DefaultRouter()
+routers.register('shoping',views.image)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.BaseSite,name='home'),
-    path('shoping',views.image.as_view()),
     path('App/', include('ProjectApp.urls')),
     path('elgenral/', include('elgenral.urls')),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns = urlpatterns + routers.urls
