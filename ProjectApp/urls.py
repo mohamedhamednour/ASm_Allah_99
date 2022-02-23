@@ -17,12 +17,14 @@ from django.contrib import admin
 import django.urls
 from ProjectApp import  views
 from django.urls import path,include
-
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('BaseSite', views.BaseSite, name='base'),
     path('nameByid/<int:Id_name>',views.NamesByid,name='nameByid'),
     path('Azkar', views.Azkar, name='Azkar'),
+    path('shoping',views.image.as_view()),
 
     path('signup', views.signup, name='sign'),
     path('logout', views.logOut, name='logout'),
@@ -30,3 +32,4 @@ urlpatterns = [
     path('login', views.loginbase, name='login'),
 
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

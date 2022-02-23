@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Names,Names_Allah
+from .models import Names,Images
 # Register your models here.
 # admin.site.register(Nemes)
 admin.site.register(Names)
-admin.site.register(Names_Allah)
+admin.site.register(Images)
 
 

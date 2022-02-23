@@ -2,6 +2,12 @@ from django.shortcuts import render, redirect
 from .models import Names
 from .forms import SignUpForm, Userauth
 from django.contrib.auth import login as loginauth, logout as logoutsite,authenticate
+from rest_framework.generics import GenericAPIView
+from rest_framework import generics
+
+from .models import Images
+from .api import Imagess
+
 
 # Create your views here.
 def BaseSite(request):
@@ -52,3 +58,9 @@ def logOut(request):
 
     # return render(request,'demo/login.html')
     return redirect('login')
+
+
+
+class image(generics.ListCreateAPIView):
+    queryset = Images.objects.all()
+    serializer_class = Imagess

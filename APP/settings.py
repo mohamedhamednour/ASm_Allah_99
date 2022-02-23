@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ProjectApp',
-    'embed_video'
+    'embed_video',
+    'elgenral',
+    'rest_framework',
+    "corsheaders",
+
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -48,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+"corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = 'APP.urls'
@@ -127,3 +132,8 @@ MEDIA_URL='/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRES=(os.path.join(BASE_DIR,'static'))
 staticfiles_storage = 'whitenoise.storage.compressedmanifeststaticfilesstorage'
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')
+CORS_ALLOW_ALL_ORIGINS = True
