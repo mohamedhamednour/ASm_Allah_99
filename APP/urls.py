@@ -29,5 +29,6 @@ urlpatterns = [
     path('App/', include('ProjectApp.urls')),
     path('elgenral/', include('elgenral.urls')),
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 urlpatterns = urlpatterns + routers.urls
