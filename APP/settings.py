@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "corsheaders",
 
 ]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
      "corsheaders.middleware.CorsMiddleware",
@@ -55,7 +56,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.common.CommonMiddleware',
+
 ]
+
 
 ROOT_URLCONF = 'APP.urls'
 
@@ -138,14 +143,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ORIGIN_ALLOW = True
-# CORS_ALLOWED_ORIGINS = [
-#     'http://localhost:3000',
-# ]
+# CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ORIGIN_ALLOW = True
 #
-# CORS_ALLOWED_ORIGIN_REGEXES = [
-#     'http://localhost:3000',
-# ]
+# CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
+
+
+ALLOWED_HOSTS = ['*']
+
+# CORS_ORIGIN_ALLOW_ALL = True
 
