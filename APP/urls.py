@@ -26,7 +26,10 @@ routers.register('shoping',views.image)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.BaseSite,name='home'),
-    path('App/', include('ProjectApp.urls')),
+    path('shopingupdate/<int:pk>',views.updateshopin.as_view()),
+     path('getshopinbtid/<int:ids>', views.getshopinbyid),
+
+                  path('App/', include('ProjectApp.urls')),
     path('elgenral/', include('elgenral.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
